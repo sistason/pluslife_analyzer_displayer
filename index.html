@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+	<head>
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Pluslife Analyzer Analyzer</title>
+        <!--<link rel="icon" href="/favicon.ico" type="image/png">-->
+        <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="chart.umd.js"></script>
+        <script src="jquery/dist/jquery.min.js"></script>
+        <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+    <main role="main" class="container mt-3">
+        <h2 class="text-center">Pluslife Analyzer Analyzer</h2>
+        <h5 class="text-center">Displays exported tests from virus.sucks</h5>
+
+        <div id="datacontainer" hidden="hidden">
+            <div class="row justify-content-center chart-container" style="position: relative; min-height: 300px; max-height:400px">
+                <canvas id="data"></canvas>
+            </div>
+            <div class="row text-center" >
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <strong>Date: </strong><span id="testdate">(Load a test first)</span><br />
+                            <strong>Result: </strong><span id="testresult">(Load a test first)</span><br />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col justify-content-center" id="testresult_channels"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col text-center">
+                <form id="show_file_form" action="/upload_file_intercepted_by_js" method="POST" enctype="application/x-www-form-urlencoded">
+                    <label for="show_file">Upload your <i>pluslife_test_data-</i> json file here<br />
+                    <input id="show_file" type="file" accept=".json, application/json" /></label><br />
+                    <button class="btn btn-sm btn-success"  type="submit">Show Test</button>
+                </form>
+                <span id="show_file-validation" style="font-size: .875em;color: #dc3545;" hidden></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <form id="share_form" action="/share_intercepted_by_js">
+                    <button class="btn btn-sm btn-info" type="submit">Share</button>
+                </form>
+                <span id="share_form-result" style="font-size: .875em;color: green;" hidden></span>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="text-center">
+            <small>EN: </small>This website does not upload, save or log anything, it just displays the export you give it locally in your browser.<br />
+            <small>DE: </small>Diese Webseite läd nichts irgendwo hoch und speichert nichts. Sie zeigt nur die Exports lokal in deinem Browser an, die du auswählst.
+        </div>
+    </footer>
+    </body>
+    <script src="pluslife.js"></script>
+    <script src="pluslife_analyzer_analyzer.js"></script>
+</html>
